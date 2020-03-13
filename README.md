@@ -68,3 +68,11 @@ If you like to install **Albert Spotlight**, you may follow:
 yay -S albert
 ```
 - After installation, you can open Albert from Menu/Dash and set hotkey to activate albert.
+
+## Plank (macOS like application menu)
+If you like to install **Plank**, you may follow:
+- Open **Terminal** end execute:
+
+```bash
+yay -S plank
+```
