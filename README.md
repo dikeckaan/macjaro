@@ -12,7 +12,7 @@ Installing macOS themes on your favourite Linux Distro.
 ![4](https://raw.githubusercontent.com/dikeckaan/macjaro/master/screenshot4.png)
 
 # Tested on
-- **MManjaro Linux** with **Gnome 3.34.4**
+- **Manjaro** **Linux** with **Gnome 3.34.4**
 
 
 # This Customization Pack Includes
