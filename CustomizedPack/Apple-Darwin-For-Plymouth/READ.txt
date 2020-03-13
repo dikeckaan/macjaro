@@ -1,0 +1,11 @@
+Installation:
+-------------
+1) Copy darwin folder (uncompressed from tar.gz) to /usr/share/plymouth/themes/
+
+2) Run this commands:
+$ sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/darwin/darwin.plymouth 100
+
+$ sudo update-alternatives --config default.plymouth
+(choose the plymouth number)
+
+$ sudo update-initramfs -u
