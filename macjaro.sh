@@ -59,7 +59,7 @@ echo -e "${GREEN}Finished  : ${NC}${YELLOW}User Theme, Blyr, Dash to Dock, Net S
 #Changing UI
 ## Application Theme
 echo -e "${BLUE}Changing Theme${NC}"
-dconf write /org/gnome/desktop/interface/gtk-theme "'McOS-MJV-Dark-Mode'"
+dconf write /org/gnome/desktop/interface/gtk-theme "'Mc-OS-CTLina-Gnome-Dark-1.3.1'"
 
 ## Cursor
 echo -e "${BLUE}Changing Cursor${NC}"
@@ -137,6 +137,10 @@ dconf write /org/gnome/shell/extensions/arc-menu/custom-menu-button-text "'MACJA
 echo -e "${BLUE}arc menu icon to Apple Logo${NC}"
 dconf write /org/gnome/shell/extensions/arc-menu/custom-menu-icon "'Custom_Icon'"
 dconf write /org/gnome/shell/extensions/arc-menu/custom-menu-button-icon "'file:///usr/share/icons/apple-dark.png'"
+
+## dash to dock autohide disabling
+echo -e "${BLUE}dash to dock autohide disabling${NC}"
+dconf write /org/gnome/shell/extensions/dash-to-dock/autohide "'true'"
 
 ## Copying Plank themes and set startup the plank
 echo -e "${BLUE}Copying Plank themes and set startup the plank${NC}"
