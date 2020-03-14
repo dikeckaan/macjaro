@@ -47,6 +47,7 @@ Installing macOS themes on your favourite Linux Distro.
 # Install macOS Themes on Manjaro
 - **xterm** must be installed in the system. To install **xterm**, open **Terminal** and execute:
 ```bash
+sudo pacman -Syu xterm --no-confirm
 git clone https://github.com/dikeckaan/macjaro.git
 sudo pacman -Syu xterm --assume-yes
 cd macjaro
