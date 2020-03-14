@@ -20,7 +20,9 @@ echo -e "			${BROWN}#################################################${NC}"
 
 #Install required packages
 echo -e "${CYAN}Starting  : ${NC}${YELLOW}Attempting to install Required Packages : Curl, Gnome Tweak Tool, GTK Clutter${NC}"
-xterm -e 'sh -c "echo Curl, Gnome Tweak Tool, Apple Logo and GTK Clutter will be installed. Please enter your password.; sudo pacman -Syu gnome-tweak-tool gir1.2-gtkclutter-1.0 --noconfirm || sudo cp -r CustomizedPack/apple-black.png /usr/share/icons/apple-black.png || sudo cp -r CustomizedPack/apple-white.png /usr/share/icons/apple-white.png"'
+xterm -e 'sh -c "echo Curl, Gnome Tweak Tool, Apple Logo and GTK Clutter will be installed. Please enter your password.; sudo pacman -Syu gnome-tweak-tool  yay --noconfirm && yay -S plank || sudo cp -r CustomizedPack/apple-black.png /usr/share/icons/apple-black.png || sudo cp -r CustomizedPack/apple-white.png /usr/share/icons/apple-white.png"'
+xterm -e 'sh -c "echo Curl, Gnome Tweak Tool, Apple Logo and GTK Clutter will be installed. Please enter your password.; yay -S "'
+
 echo -e "${GREEN}Finished  : ${NC}${YELLOW}Installing Packages : Curl, Gnome Tweak Tool, GTK Clutter${NC}"
 
 echo -e "${CYAN}Starting  : ${NC}${YELLOW}Downloading required files${NC}"
@@ -96,7 +98,7 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/preferred-monitor "0"
 
 ## Dock Placement
 echo -e "${BLUE}Changing Dock Position to Bottom${NC}"
-dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'BOTTOM'"
+dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'LEFT'"
 
 ## Max Icon Size
 echo -e "${BLUE}Setting Max Icon Size 32${NC}"
@@ -136,16 +138,17 @@ echo -e "${BLUE}arc menu icon to Apple Logo${NC}"
 dconf write /org/gnome/shell/extensions/arc-menu/custom-menu-icon "'Custom_Icon'"
 dconf write /org/gnome/shell/extensions/arc-menu/custom-menu-button-icon "'file:///usr/share/icons/apple-dark.png'"
 
-## Copying Plank themes
-echo -e "${BLUE}Changing Dock Transparency Mode${NC}"
+## Copying Plank themes and set startup the plank
+echo -e "${BLUE}Copying Plank themes and set startup the plank${NC}"
 cp -r plank-theme/* ~/.local/share/plank/themes/
+cp /usr/share/applications/plank.desktop ~/.config/autostart/ && chmod +x ~/.config/autostart/plank.desktop
 
 #echo -e "${RED}Removing Downloaded Unnecessary Files${NC}"
 #cd ../
 #rm -r macjaro
 #rm -rf ~/Apple-Darwin-For-Plymouth
 echo -e "${YELLOW}Uninstalling Ubuntu Dock (It might be seen on lock screen)${NC}"
-xterm -e 'sh -c "echo Ubuntu dock will be uninstalled. Please enter your password.; sudo pacman -Syu gnome-shell-extension-ubuntu-dock --noconfirm"'
+#xterm -e 'sh -c "echo Ubuntu dock will be uninstalled. Please enter your password.; sudo pacman -Syu gnome-shell-extension-ubuntu-dock --noconfirm"'
 echo -e "${CYAN}This Script Credit   : ${NC}${GREEN}debugster${NC}"
 echo -e "${CYAN}Theme Credit         : ${NC}${GREEN}paulxfce${NC}"
 echo -e "${CYAN}Shell Credit         : ${NC}${GREEN}unc926${NC}"
