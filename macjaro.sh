@@ -20,8 +20,8 @@ echo -e "			${BROWN}#################################################${NC}"
 
 #Install required packages
 echo -e "${CYAN}Starting  : ${NC}${YELLOW}Attempting to install Required Packages : Curl, Gnome Tweak Tool, GTK Clutter${NC}"
-xterm -e 'sh -c "echo Curl, Gnome Tweak Tool, Apple Logo and GTK Clutter will be installed. Please enter your password.; sudo pacman -Syu gnome-tweak-tool  yay --noconfirm && yay -S plank || sudo cp -r CustomizedPack/apple-black.png /usr/share/icons/apple-black.png || sudo cp -r CustomizedPack/apple-white.png /usr/share/icons/apple-white.png"'
-xterm -e 'sh -c "echo Curl, Gnome Tweak Tool, Apple Logo and GTK Clutter will be installed. Please enter your password.; yay -S "'
+xterm -e 'sh -c "echo Curl, Gnome Tweak Tool, Apple Logo and GTK Clutter will be installed. Please enter your password.;yes | sudo pacman -Syu gnome-tweak-tool &&yes | yay --noconfirm && yes |  yay -S plank || sudo cp -r CustomizedPack/apple-black.png /usr/share/icons/apple-black.png || sudo cp -r CustomizedPack/apple-white.png /usr/share/icons/apple-white.png"'
+#xterm -e 'sh -c "echo Curl, Gnome Tweak Tool, Apple Logo and GTK Clutter will be installed. Please enter your password.; yay -S "'
 
 echo -e "${GREEN}Finished  : ${NC}${YELLOW}Installing Packages : Curl, Gnome Tweak Tool, GTK Clutter${NC}"
 
