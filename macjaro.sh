@@ -20,7 +20,7 @@ echo -e "			${BROWN}#################################################${NC}"
 
 #Install required packages
 echo -e "${CYAN}Starting  : ${NC}${YELLOW}Attempting to install Required Packages : Curl, Gnome Tweak Tool, GTK Clutter${NC}"
-xterm -e 'sh -c "echo Curl, Gnome Tweak Tool and GTK Clutter will be installed. Please enter your password.; sudo pacman -Syu gnome-tweak-tool gir1.2-gtkclutter-1.0 --noconfirm"'
+xterm -e 'sh -c "echo Curl, Gnome Tweak Tool, Apple Logo and GTK Clutter will be installed. Please enter your password.; sudo pacman -Syu gnome-tweak-tool gir1.2-gtkclutter-1.0 --noconfirm || sudo cp -r CustomizedPack/apple-black.png /usr/share/icons/apple-black.png || sudo cp -r CustomizedPack/apple-white.png /usr/share/icons/apple-white.png"'
 echo -e "${GREEN}Finished  : ${NC}${YELLOW}Installing Packages : Curl, Gnome Tweak Tool, GTK Clutter${NC}"
 
 echo -e "${CYAN}Starting  : ${NC}${YELLOW}Downloading required files${NC}"
@@ -57,7 +57,7 @@ echo -e "${GREEN}Finished  : ${NC}${YELLOW}User Theme, Blyr, Dash to Dock, Net S
 #Changing UI
 ## Application Theme
 echo -e "${BLUE}Changing Theme${NC}"
-dconf write /org/gnome/desktop/interface/gtk-theme "'McOS-MJV'"
+dconf write /org/gnome/desktop/interface/gtk-theme "'McOS-MJV-Dark-Mode'"
 
 ## Cursor
 echo -e "${BLUE}Changing Cursor${NC}"
@@ -69,16 +69,16 @@ dconf write /org/gnome/desktop/interface/icon-theme "'MacRemix'"
 
 ## Shell
 echo -e "${BLUE}Changing Shell${NC}"
-dconf write /org/gnome/shell/extensions/user-theme/name "'MacOS_HS'"
+dconf write /org/gnome/shell/extensions/user-theme/name "'Mc-OS-CTLina-Gnome-Dark-1.3.1'"
 
 ## Wallpaper
 echo -e "${BLUE}Changing Wallpaper${NC}"
-dconf write /org/gnome/desktop/background/picture-uri "'file:///home/$USER/Pictures/macOS-mojave-Desert-5.jpg'"
+dconf write /org/gnome/desktop/background/picture-uri "'file:///home/$USER/Pictures/macOS-mojave-Desert-6.jpg'"
 dconf write /org/gnome/desktop/background/picture-options "'zoom'"
 
 ## Lock Screen Wallpaper
 echo -e "${BLUE}Changing Lock Screen Wallpaper${NC}"
-dconf write /org/gnome/desktop/screensaver/picture-uri "'file:///home/$USER/Pictures/macOS-mojave-Desert-5.jpg'"
+dconf write /org/gnome/desktop/screensaver/picture-uri "'file:///home/$USER/Pictures/macOS-mojave-Desert-6.jpg'"
 dconf write /org/gnome/desktop/screensaver/picture-options "'zoom'"
 
 ## Show Desktop Icons
@@ -127,8 +127,22 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/custom-theme-shrink "false"
 echo -e "${BLUE}Changing Dock Transparency Mode${NC}"
 dconf write /org/gnome/shell/extensions/dash-to-dock/transparency-mode "'DEFAULT'"
 
-echo -e "${RED}Removing Downloaded Unnecessary Files${NC}"
-cd ../
+## arc menu name to MACJARO
+echo -e "${BLUE}arc menu name to MACJARO${NC}"
+dconf write /org/gnome/shell/extensions/arc-menu/custom-menu-button-text "'MACJARO'"
+
+## arc menu icon to Apple Logo
+echo -e "${BLUE}arc menu icon to Apple Logo${NC}"
+dconf write /org/gnome/shell/extensions/arc-menu/custom-menu-icon "'Custom_Icon'"
+dconf write /org/gnome/shell/extensions/arc-menu/custom-menu-button-icon "'file:///usr/share/icons/apple-dark.png'"
+
+## Copying Plank themes
+echo -e "${BLUE}Changing Dock Transparency Mode${NC}"
+cp -r plank-theme/* ~/.local/share/plank/themes/
+
+#echo -e "${RED}Removing Downloaded Unnecessary Files${NC}"
+#cd ../
+#rm -r macjaro
 #rm -rf ~/Apple-Darwin-For-Plymouth
 echo -e "${YELLOW}Uninstalling Ubuntu Dock (It might be seen on lock screen)${NC}"
 xterm -e 'sh -c "echo Ubuntu dock will be uninstalled. Please enter your password.; sudo pacman -Syu gnome-shell-extension-ubuntu-dock --noconfirm"'
