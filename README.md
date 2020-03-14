@@ -7,7 +7,7 @@ Installing macOS themes on your favourite Linux Distro.
 
 # ScreenShots
 ![1](https://raw.githubusercontent.com/dikeckaan/macjaro/master/screenshot5.png)
-![2](https://raw.githubusercontent.com/dikeckaan/macjaro/master/screenshoot6.png)
+![2](https://raw.githubusercontent.com/dikeckaan/macjaro/master/screenshot6.png)
 <!--!
 [3](https://raw.githubusercontent.com/dikeckaan/macjaro/master/screenshoot2.png)
 ![4](https://raw.githubusercontent.com/dikeckaan/macjaro/master/screenshoot3.png)
