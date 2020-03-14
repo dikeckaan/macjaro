@@ -144,6 +144,7 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/autohide "'true'"
 
 ## Copying Plank themes and set startup the plank
 echo -e "${BLUE}Copying Plank themes and set startup the plank${NC}"
+cd ../
 cp -r plank-theme/* ~/.local/share/plank/themes/
 cp /usr/share/applications/plank.desktop ~/.config/autostart/ && chmod +x ~/.config/autostart/plank.desktop
 
