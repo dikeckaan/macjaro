@@ -59,7 +59,6 @@ chmod +x macjaro.sh
 - Don't run this script as **sudo**.
 - This script will open **xterm** several times to install some required packages. When promted, enter your password on **xterm** window.
 
-- Log Out/Restart your computer.
 
 
 ### Albert Spotlight (macOS like Spotlight)
